@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fairsim"
+version = "0.3.0.dev0"
+description = "Mesa-based library for simulating fairness in co-adaptive decision systems"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "mesa>=3.3",
+    "numpy>=2.0",
+    "pandas>=2.0",
+    "scikit-learn>=1.5",
+    "fairlearn>=0.10",
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+rl = [
+    "gymnasium>=1.0",
+    "stable-baselines3>=2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["fairsim*"]
